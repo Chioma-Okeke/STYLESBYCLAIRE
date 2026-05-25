@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stylesbyclaire Website
 
-## Getting Started
+A luxury, modern, and minimalist website for Stylesbyclaire - a premium hair braiding brand offering protective hairstyles for students, busy professionals, kids, parents, and future luxury beauty clients.
 
-First, run the development server:
+The website is designed to showcase Claire’s braiding services, pricing, brand story, contact details, and appointment/payment flow in a polished and engaging way.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Luxury landing page introducing the brand
+- About page for the stylist/business story
+- Hair services catalog with pricing
+- Interactive service cards
+- Service detail modal for each braid style
+- Booking call-to-action
+- Contact section/page
+- Payment or deposit checkout flow
+- Responsive design for mobile, tablet, and desktop
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```txt
+/
+Home / Landing Page
 
-## Learn More
+/about
+About Stylesbyclaire
 
-To learn more about Next.js, take a look at the following resources:
+/services
+Hair braiding services catalog
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/contact
+Contact and inquiry page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/booking
+Appointment booking flow
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/checkout
+Deposit or payment checkout page
