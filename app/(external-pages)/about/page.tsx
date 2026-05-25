@@ -1,8 +1,8 @@
-const Contact = () => {
+const About = () => {
     return <>
         <h1>Hello</h1>
     </>
 }
 
 
-export default Contact
+export default About
