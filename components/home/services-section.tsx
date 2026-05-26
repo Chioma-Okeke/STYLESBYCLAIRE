@@ -11,7 +11,7 @@ const ServicesSection = () => {
                 <MaxContainer className="space-y-10">
                     <div className="flex flex-col lg:flex-row justify-between max-lg:gap-3 lg:items-end">
                         <div className="max-w-lg space-y-2">
-                            <h1 className="font-fraunces text-[40px] text-primary leading-tight">Braided Styles Tailored for Every Occasion</h1>
+                            <h1 className="font-heading text-[40px] text-primary leading-tight">Braided Styles Tailored for Every Occasion</h1>
                             <p className="lg:text-lg">Thoughtfully crafted braid styles designed to elevate your look, protect your natural hair, and fit effortlessly into your lifestyle.</p>
                         </div>
                         <Link href="/catalog" className="bg-primary w-fit text-white shadow-sm px-5 py-3 rounded-sm hover:bg-primary-dark hover:shadow-lg transition-colors duration-300 ease-in-out">

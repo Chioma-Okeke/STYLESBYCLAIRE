@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -7,10 +8,26 @@ const fraunces = Fraunces({
   subsets: ["latin"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
+const satoshi = localFont({
+  variable: "--font-satoshi",
+  src: [
+    {
+      path: "../fonts/satoshi/Satoshi-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ]
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stylesbyclaire.vercel.app/"),
@@ -82,7 +99,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${manrope.variable} h-full antialiased text-muted-foreground`}
+      className={`${fraunces.variable} ${satoshi.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
