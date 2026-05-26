@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${manrope.variable} h-full antialiased text-muted-foreground`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
