@@ -1,12 +1,14 @@
-import Image from "next/image"
+import ContactHero from "@/components/contact/hero-section"
+import InfoSection from "@/components/contact/info-section"
+import FaqSection from "@/components/home/faq-section"
 
 const Contact = () => {
     return (
-        <div>
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-                <Image src="/french-curls.png" alt="French Curls" fill className="object-cover" />
-            </div>
-        </div>
+        <>
+            <ContactHero />
+            <InfoSection />
+            <FaqSection />
+        </>
     )
 }
 
