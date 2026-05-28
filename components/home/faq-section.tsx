@@ -20,9 +20,7 @@ const FaqSection = () => {
                         <h2 className="text-4xl lg:text-[70px] text-center">Frequently asked questions</h2>
                         <p className="text-center md:text-lg">Everything you need to know before your appointment.</p>
                     </div>
-                    <div className={cn("max-w-150 mx-auto font-medium", {
-                        "space-y-6": showAnswer !== null,
-                    })}>
+                    <div className={cn("max-w-150 mx-auto font-medium")}>
                         {faqs.map((faq) => {
                             const isOpen = showAnswer === faq.id
 
@@ -43,12 +41,12 @@ const FaqSection = () => {
 
                                     <div
                                         className={cn(
-                                            "relative max-w-110 ml-auto bg-white/80 rounded-2xl border border-border/30 overflow-hidden transform-gpu origin-top transition-all duration-500",
+                                            "relative max-w-110 ml-auto bg-white/80 rounded-2xl p-0 border border-border/30 overflow-hidden transform-gpu origin-top transition-all duration-500",
                                             {
                                                 // closed state
                                                 "max-h-0 opacity-0 scale-95 pointer-events-none": !isOpen,
                                                 // open state (arbitrary max height to allow smooth reveal)
-                                                "max-h-100 opacity-100 scale-100 px-5 py-3 ": isOpen,
+                                                "max-h-100 opacity-100 scale-100 px-5 py-3 mb-6": isOpen,
                                             }
                                         )}
                                     >
