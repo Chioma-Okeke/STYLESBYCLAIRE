@@ -27,6 +27,7 @@ const ServicesSection = () => {
                                     sizes="100vw"
                                     fill
                                     className="object-cover w-full h-full"
+                                    priority={true}
                                 />
                             </div>
                         </div>
@@ -39,6 +40,7 @@ const ServicesSection = () => {
                                         sizes="100vw"
                                         fill
                                         className="object-cover w-full h-full"
+                                        priority={true}
                                     />
                                 </div>
                                 <div className={`w-full aspect-4/5 lg:aspect-5/5 relative overflow-hidden rounded-xl ${overlayStyles}`}>
@@ -48,6 +50,7 @@ const ServicesSection = () => {
                                         sizes="100vw"
                                         fill
                                         className="object-cover w-full h-full"
+                                        priority={true}
                                     />
                                 </div>
                             </div>
@@ -59,6 +62,7 @@ const ServicesSection = () => {
                                         sizes="100vw"
                                         fill
                                         className="object-cover w-full h-full"
+                                        priority={true}
                                     />
                                 </div>
                                 <div className={`w-full aspect-4/5 lg:aspect-5/5 relative overflow-hidden rounded-xl ${overlayStyles}`}>
@@ -68,6 +72,7 @@ const ServicesSection = () => {
                                         sizes="100vw"
                                         fill
                                         className="object-cover w-full h-full"
+                                        priority={true}
                                     />
                                 </div>
                             </div>

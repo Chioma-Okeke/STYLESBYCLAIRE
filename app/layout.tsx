@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import BackToTop from "@/components/shared/back-to-top";
+import ScrollToTop from "@/components/shared/scroll-to-top";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -101,7 +103,11 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${satoshi.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ScrollToTop />
+        {children}
+        <BackToTop />
+      </body>
     </html>
   );
 }
