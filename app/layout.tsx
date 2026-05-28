@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import BackToTop from "@/components/shared/back-to-top";
 import ScrollToTop from "@/components/shared/scroll-to-top";
+import Footer from "@/components/shared/footer";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -107,6 +108,7 @@ export default function RootLayout({
         <ScrollToTop />
         {children}
         <BackToTop />
+        <Footer />
       </body>
     </html>
   );
