@@ -13,7 +13,7 @@ const FaqSection = () => {
 
 
     return (
-        <section className="py-24">
+        <section className=" py-10 lg:py-16">
             <MaxContainer>
                 <PaddingContainer>
                     <div className="space-y-4 mb-12">
@@ -27,7 +27,7 @@ const FaqSection = () => {
                             return (
                                 <div key={faq.id} className="space-y-3">
                                     <div className="text-primary flex items-center gap-3 lg:w-fit cursor-pointer group" onClick={() => setShowAnswer(isOpen ? null : faq.id)}>
-                                        <p className={cn("max-md:rounded-2xl rounded-full text-primary border border-border/10 py-3 px-5 bg-white/50 transition-all duration-300 group-hover:bg-primary group-hover:text-white max-md:max-w-3/5 max-w-100", {
+                                        <p className={cn("max-md:rounded-2xl rounded-full text-primary border border-border/10 py-3 px-5 bg-white/50 transition-all duration-300 group-hover:bg-primary group-hover:text-white max-md:max-w-4/5 max-w-100", {
                                             "bg-secondary/70": isOpen
                                         })}>{faq.question}</p>
                                         {

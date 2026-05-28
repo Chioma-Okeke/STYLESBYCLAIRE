@@ -7,7 +7,7 @@ import { Star } from "lucide-react"
 
 const TestimonialSection = () => {
     return (
-        <section className="bg-secondary/80 py-28">
+        <section className="bg-secondary/80 py-10 lg:py-16">
             <PaddingContainer>
                 <MaxContainer>
                     <div className="space-y-8 md:grid md:grid-cols-3 w-full md:gap-12">
