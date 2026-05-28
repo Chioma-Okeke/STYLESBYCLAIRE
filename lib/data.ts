@@ -51,3 +51,31 @@ export const testimonials = [
         rating: 4,
     },
 ];
+
+export const faqs = [
+    {
+        id: 1,
+        question: "How do I book an appointment?",
+        answer: "You can book directly through the website by selecting your preferred braid style, choosing a date and time, and completing the booking process.",
+    },
+    {
+        id: 2,
+        question: "Do I need to come with my hair washed?",
+        answer: "Yes, clients are expected to arrive with clean and properly detangled hair unless a wash service has been added to the appointment.",
+    },
+    {
+        id: 3,
+        question: "Is the fixed deposit refundable?",
+        answer: "No, the fixed deposit is non-refundable. Deposits secure your appointment slot and help prevent last-minute cancellations.",
+    },
+    {
+        id: 4,
+        question: "How long do braid appointments usually take?",
+        answer: "Appointment duration depends on the selected style and hair length. Most braid services typically take between 3 to 8 hours.",
+    },
+    {
+        id: 6,
+        question: "Do you provide hair extensions?",
+        answer: "Yes, hair extensions can be provided for selected styles. Details will be included in the service description before booking.",
+    },
+];
