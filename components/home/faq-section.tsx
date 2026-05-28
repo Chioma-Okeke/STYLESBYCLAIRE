@@ -26,8 +26,8 @@ const FaqSection = () => {
 
                             return (
                                 <div key={faq.id} className="space-y-3">
-                                    <div className="text-primary flex items-center gap-3 w-fit cursor-pointer group" onClick={() => setShowAnswer(isOpen ? null : faq.id)}>
-                                        <p className={cn("rounded-full text-primary border border-border/10 py-3 px-5 bg-white/50 transition-all duration-300 group-hover:bg-primary group-hover:text-white max-w-100", {
+                                    <div className="text-primary flex items-center gap-3 lg:w-fit cursor-pointer group" onClick={() => setShowAnswer(isOpen ? null : faq.id)}>
+                                        <p className={cn("max-md:rounded-2xl rounded-full text-primary border border-border/10 py-3 px-5 bg-white/50 transition-all duration-300 group-hover:bg-primary group-hover:text-white max-md:max-w-3/5 max-w-100", {
                                             "bg-secondary/70": isOpen
                                         })}>{faq.question}</p>
                                         {
@@ -41,7 +41,7 @@ const FaqSection = () => {
 
                                     <div
                                         className={cn(
-                                            "relative max-w-110 ml-auto bg-white/80 rounded-2xl p-0 border border-border/30 overflow-hidden transform-gpu origin-top transition-all duration-500",
+                                            "relative max-md:max-w-4/5 max-w-110 ml-auto bg-white/80 rounded-2xl p-0 border border-border/30 overflow-hidden transform-gpu origin-top transition-all duration-500",
                                             {
                                                 // closed state
                                                 "max-h-0 opacity-0 scale-95 pointer-events-none": !isOpen,
