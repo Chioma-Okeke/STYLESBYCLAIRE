@@ -12,7 +12,7 @@ const ProductGrid = () => {
                         <h2 className="font-semibold text-3xl lg:text-5xl">Styles</h2>
                         <p className="lg:text-lg">Discover our range of beautiful hairstyles.</p>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6 items-center">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-8 items-center max-lg:gap-y-6">
                         {
                             services.map((service) => {
                                 return (

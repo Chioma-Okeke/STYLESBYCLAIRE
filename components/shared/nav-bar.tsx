@@ -69,9 +69,13 @@ const NavBar = () => {
                         >
                             <div className="space-y-5">
                                 <div className="flex items-center justify-between p-6 border-b">
-                                    <h1 className="font-semibold tracking-widest text-lg">
-                                        STYLESBYCLAIRE
-                                    </h1>
+                                    <Link
+                                        href="/"
+                                        onClick={() => setIsOpen(false)}>
+                                        <h1 className="font-semibold tracking-widest text-lg">
+                                            STYLESBYCLAIRE
+                                        </h1>
+                                    </Link>
 
                                     <Button className="bg-transparent p-0 h-auto text-primary" onClick={() => setIsOpen(false)}>
                                         <X size={28} />
@@ -96,7 +100,7 @@ const NavBar = () => {
                             </div>
 
                             <div className="p-8">
-                                <Button className="w-full h-12 rounded-full">
+                                <Button className="w-full h-auto py-4 rounded-full">
                                     Book Consultation
                                 </Button>
                             </div>
