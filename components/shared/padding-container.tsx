@@ -2,12 +2,13 @@ import { cn } from "@/lib/utils"
 import React from "react"
 
 interface PaddingContainerProps {
-    children: React.ReactNode
+    children: React.ReactNode,
+    className?: string
 }
 
-const PaddingContainer = ({children}: PaddingContainerProps) => {
+const PaddingContainer = ({children, className}: PaddingContainerProps) => {
     return (
-        <div className={cn("px-5 md:px-10 xl:px-25")}>
+        <div className={cn("px-5 md:px-10 xl:px-25", className)}>
             {children}
         </div>
     )

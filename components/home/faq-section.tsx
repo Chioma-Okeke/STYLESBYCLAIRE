@@ -7,13 +7,13 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-const FaqSection = () => {
+const FaqSection = ({className}: {className?: string}) => {
     const [showAnswer, setShowAnswer] = useState<number | null>(1)
 
 
 
     return (
-        <section className=" py-10 lg:py-16">
+        <section className={cn("py-10 lg:py-16", className)}>
             <MaxContainer>
                 <PaddingContainer>
                     <div className="space-y-4 mb-12">
@@ -28,7 +28,8 @@ const FaqSection = () => {
                                 <div key={faq.id} className="space-y-3">
                                     <div className="text-primary flex items-center gap-3 lg:w-fit cursor-pointer group" onClick={() => setShowAnswer(isOpen ? null : faq.id)}>
                                         <p className={cn("max-md:rounded-2xl rounded-full text-primary border border-border/10 py-3 px-5 bg-white/50 transition-all duration-300 group-hover:bg-primary group-hover:text-white max-md:max-w-4/5 max-w-100", {
-                                            "bg-secondary/70": isOpen
+                                            "bg-primary/70": isOpen,
+                                            "text-white": isOpen,
                                         })}>{faq.question}</p>
                                         {
                                             isOpen ? (

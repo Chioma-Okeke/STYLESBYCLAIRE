@@ -4,7 +4,7 @@ import PaddingContainer from "../shared/padding-container";
 
 const InfoSection = () => {
     return (
-        <section className="pb-10 lg:pb-16 bg-secondary ">
+        <section className="pb-10 lg:pb-16">
             <MaxContainer>
                 <PaddingContainer>
                     <div className=" lg:text-lg font-medium">

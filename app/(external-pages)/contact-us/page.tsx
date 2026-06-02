@@ -7,7 +7,7 @@ const Contact = () => {
         <>
             <ContactHero />
             <InfoSection />
-            <FaqSection />
+            <FaqSection className="bg-secondary" />
         </>
     )
 }

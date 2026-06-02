@@ -165,6 +165,7 @@
         @apply font-heading text-primary;
         letter-spacing: -0.045em;
         line-height: 0.95;
+        font-weight: 600;
     }
     p {
         @apply text-muted-foreground;
@@ -182,5 +183,10 @@
 }
 
 .custom-shape-divider-bottom .shape-fill {
-    fill: var(--secondary);
+    fill: var(--background);
+}
+
+.catalog-hero {
+    background: url("/french-curls.png") no-repeat center center;
+    background-size: cover;
 }

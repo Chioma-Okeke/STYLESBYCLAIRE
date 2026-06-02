@@ -1,6 +1,10 @@
+import { CatalogHeroSection } from "@/components/catalog/catalog-hero-section"
+import ProductGrid from "@/components/catalog/product-grid"
+
 const Catalog = () => {
     return <>
-        <h1>Hello</h1>
+        <CatalogHeroSection />
+        <ProductGrid />
     </>
 }
 
