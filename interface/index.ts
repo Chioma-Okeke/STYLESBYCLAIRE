@@ -10,6 +10,7 @@ export interface Service {
   hairIncluded?: boolean;
   depositRequired?: number;
   image: string;
+  images: string[];
   featured?: boolean;
 }
 

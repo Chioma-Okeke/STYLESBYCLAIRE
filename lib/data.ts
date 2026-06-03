@@ -120,7 +120,8 @@ export const services: Service[] = [
         ],
         hairIncluded: true,
         depositRequired: 25,
-        image: "/services/knotless-braids.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
         featured: true,
     },
 
@@ -134,7 +135,8 @@ export const services: Service[] = [
         pricingType: "starting-at",
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/soft-locs.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -146,7 +148,8 @@ export const services: Service[] = [
         price: 60,
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/regular-cornrows.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -158,7 +161,8 @@ export const services: Service[] = [
         price: 95,
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/mini-braids.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -170,7 +174,8 @@ export const services: Service[] = [
         price: 85,
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/two-strand-twists.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -182,7 +187,8 @@ export const services: Service[] = [
         price: 60,
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/tribal-braids.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -195,7 +201,8 @@ export const services: Service[] = [
         pricingType: "starting-at",
         hairIncluded: false,
         depositRequired: 25,
-        image: "/services/fulani-braids.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -210,7 +217,8 @@ export const services: Service[] = [
         },
         hairIncluded: true,
         depositRequired: 25,
-        image: "/services/mini-twists.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -236,7 +244,8 @@ export const services: Service[] = [
                 price: 50,
             },
         ],
-        image: "/services/pre-part.jpg",
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
+        images: [],
     },
 
     {
@@ -254,15 +263,19 @@ export const services: Service[] = [
         },
         hairIncluded: true,
         depositRequired: 25,
-        image: "/services/marley-twists.jpg",
+        image: "",
+        images: [
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522757/IMG_2214_t4kmzu.heic",
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780426921/IMG_2257_ehutyv.heic",
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780426919/IMG_5462_stashq.heic",
+        ],
     },
 
     {
         id: 11,
         name: "French Curls",
         category: "Braids",
-        description:
-            "Elegant French curl braids with soft, flowing curls. Hair included.",
+        description: "Elegant French curl braids with soft, flowing curls.",
         pricing: {
             smedium: {
                 bob: 220,
@@ -287,7 +300,12 @@ export const services: Service[] = [
         ],
         hairIncluded: true,
         depositRequired: 25,
-        image: "/services/french-curls.jpg",
+        image: "",
+        images: [
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1780426919/IMG_5392_leoltg.jpg",
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780426919/IMG_4755_x1musj.heic",
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_4159_z2mqx6.heic",
+        ],
         featured: true,
     },
 ];
@@ -309,7 +327,8 @@ export const businessRules = {
         "Hair is included in all styles except Soft Locs and Boho Curls (Knotless).",
         "Styles or sizes not listed can be discussed prior to booking.",
         "Weekend appointments are studio appointments only.",
+        "Deposit goes towards total service price.",
         "Weekend appointments +$40",
-        "Squeeze-in appointments +$70"
+        "Squeeze-in appointments +$70",
     ],
 };
