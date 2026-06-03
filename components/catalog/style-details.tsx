@@ -8,6 +8,7 @@ import { useState } from "react";
 import { businessRules } from "@/lib/data";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "motion/react";
 
 const StyleDetails = ({ service }: { service: Service }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,33 @@ const StyleDetails = ({ service }: { service: Service }) => {
                 <div className="px-5 space-y-5 font-medium">
                     <div className="flex flex-col gap-4">
                         <div className="relative overflow-hidden aspect-4/5 rounded-2xl bg-muted">
-                            <Image src={activeImage} alt="style image" fill className="object-cover" priority />
+                            <AnimatePresence initial={false}>
+                                <motion.div
+                                    key={activeImage}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.35, ease: "easeOut" }}
+                                    className="absolute inset-0"
+                                >
+                                    <motion.div
+                                        initial={{ scale: 1.08 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                                        className="relative h-full w-full"
+                                    >
+                                        <Image
+                                            src={activeImage}
+                                            alt={service.name}
+                                            fill
+                                            sizes="100vw"
+                                            className="object-cover"
+                                        />
+                                    </motion.div>
+                                </motion.div>
+                            </AnimatePresence>
                         </div>
-                        <div className={cn("grid grid-cols-3 gap-4 items-center", !service?.images && "hidden")}>
+                        <div className={cn("grid grid-cols-3 gap-2 lg:gap-4 items-center", !service?.images && "hidden")}>
                             {Array.isArray(service?.images) && service?.images.map((image, index) => {
                                 return (
                                     <div
@@ -37,7 +62,14 @@ const StyleDetails = ({ service }: { service: Service }) => {
                                         key={index}
                                         className="relative overflow-hidden aspect-4/5 rounded-xl bg-muted cursor-pointer border-2 border-transparent hover:border-primary/50 transition-all duration-300 ease-in-out"
                                     >
-                                        <Image src={image} alt={`Style ${index}`} fill className="object-cover" />
+                                        <Image
+                                            src={image}
+                                            alt={`Style ${index}`}
+                                            fill
+                                            className={`h-24 w-24 rounded-xl object-cover transition-all duration-300 ${activeImage === image
+                                                ? "ring-2 ring-primary opacity-100"
+                                                : "opacity-70 hover:opacity-100"
+                                                }`} />
                                     </div>
                                 )
                             })}
