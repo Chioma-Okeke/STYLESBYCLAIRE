@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
 import { Service } from "@/interface";
 import StyleDetails from "./style-details";
 
