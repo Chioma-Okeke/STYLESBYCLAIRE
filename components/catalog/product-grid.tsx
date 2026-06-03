@@ -16,7 +16,7 @@ const ProductGrid = () => {
                         {
                             services.map((service) => {
                                 return (
-                                    <ProductCard key={service.id} style={service} />
+                                    <ProductCard key={service.id} service={service} />
                                 )
                             })
                         }

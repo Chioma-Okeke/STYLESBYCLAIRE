@@ -309,5 +309,7 @@ export const businessRules = {
         "Hair is included in all styles except Soft Locs and Boho Curls (Knotless).",
         "Styles or sizes not listed can be discussed prior to booking.",
         "Weekend appointments are studio appointments only.",
+        "Weekend appointments +$40",
+        "Squeeze-in appointments +$70"
     ],
 };
