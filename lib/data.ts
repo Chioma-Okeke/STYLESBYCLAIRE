@@ -116,7 +116,7 @@ export const services: Service[] = [
                 name: "Boho Service",
                 price: 15,
                 description: "Adds boho styling (boho curls not included).",
-            },
+            }
         ],
         hairIncluded: true,
         depositRequired: 25,
@@ -332,3 +332,5 @@ export const businessRules = {
         "Squeeze-in appointments +$70",
     ],
 };
+
+

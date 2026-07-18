@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "Book luxury hair braiding services with Stylesbyclaire. Explore protective hairstyles, pricing, service details, and appointment options in one elegant experience.",
     images: [
       {
-        url: "https://stylesbyclaire.vercel.app/og-image.jpg",
+        url: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1784155210/Logo_j1hiri.png",
         width: 1200,
         height: 630,
         alt: "Stylesbyclaire Hair Braiding Website Banner",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     description:
       "Luxury hair braiding services, protective styles, pricing, and appointment booking by Stylesbyclaire.",
     creator: "@stylesbyclaire",
-    images: ["https://stylesbyclaire.vercel.app/og-image.jpg"],
+    images: ["https://res.cloudinary.com/djrp3aaq9/image/upload/v1784155210/Logo_j1hiri.png"],
   },
   icons: {
     icon: "/favicon.ico",
