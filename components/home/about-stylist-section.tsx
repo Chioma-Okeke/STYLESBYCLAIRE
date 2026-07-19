@@ -7,7 +7,7 @@ const AboutStylistSection = () => {
         <section className="bg-muted py-10 lg:py-16">
             <PaddingContainer>
                 <MaxContainer>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="relative w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 aspect-4/5">
                             <div className="absolute top-0 left-0 w-[75%] h-[85%] bg-secondary rounded-t-full rounded-bl-4xl" />
                             <div className="absolute bottom-0 right-0 w-[60%] h-[60%] bg-primary rounded-b-full rounded-tr-4xl" />

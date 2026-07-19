@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className="border-t border-border py-10">
             <MaxContainer>
                 <PaddingContainer>
-                    <div className="flex flex-col items-center gap-6 lg:gap-9">
+                    <div className="flex flex-col items-center gap-6 lg:gap-9 lg:text-lg">
                         <div className="gap-3 flex flex-col items-center">
                             <h1>STYLESBYCLAIRE</h1>
                             <nav className="flex items-center gap-4 lg:gap-7">

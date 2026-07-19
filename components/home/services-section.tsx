@@ -12,7 +12,7 @@ const ServicesSection = () => {
         <section className="py-10 lg:py-16">
             <PaddingContainer>
                 <MaxContainer className="space-y-10">
-                    <div className="flex flex-col lg:flex-row justify-between max-lg:gap-3 lg:items-end">
+                    <div className="flex flex-col md:flex-row justify-between max-lg:gap-3 lg:items-end">
                         <div className="max-w-xl space-y-2">
                             <h1 className="font-heading text-4xl lg:text-[55px] text-primary leading-tight">Our Services</h1>
                         </div>
@@ -20,13 +20,13 @@ const ServicesSection = () => {
                             See all styles
                         </Link>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16">
+                    <div className="grid grid-cols-2 md:grid-cols-2 md:gap-x-16">
                         {serviceColumns.map((column, columnIndex) => (
                             <div key={columnIndex} className="divide-y divide-border/60">
                                 {column.map((service) => (
                                     <p
                                         key={service}
-                                        className="font-heading text-2xl lg:text-3xl text-primary text-center py-6"
+                                        className="font-heading md:text-xl lg:text-3xl text-primary text-center py-2 md:py-4 lg:py-6"
                                     >
                                         {service}
                                     </p>

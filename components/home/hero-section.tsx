@@ -56,8 +56,11 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/50" />
 
             <PaddingContainer className="relative z-10 flex min-h-[85vh] lg:min-h-screen items-center">
-                <MaxContainer className="relative ">
+                <MaxContainer className="relative">
                     <div className="w-full absolute left-1/2 -translate-x-1/2  flex flex-col items-center gap-5 text-center mx-auto max-w-2xl">
+                        <h1 className="hidden lg:block font-heading text-5xl lg:text-[80px] text-white leading-tight">
+                            Stylesbyclaire
+                        </h1>
                         <p className="text-white font-medium text-lg max-w-md">
                             Where every style tells a story braids &amp; twists, crafted just for you.
                         </p>

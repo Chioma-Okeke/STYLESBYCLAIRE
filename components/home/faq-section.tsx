@@ -20,7 +20,7 @@ const FaqSection = ({className}: {className?: string}) => {
                         <h2 className="text-4xl lg:text-[70px] text-center">Frequently asked questions</h2>
                         <p className="text-center md:text-lg">Everything you need to know before your appointment.</p>
                     </div>
-                    <div className={cn("max-w-150 mx-auto font-medium")}>
+                    <div className={cn("lg:text-lg max-w-150 mx-auto font-medium")}>
                         {faqs.map((faq) => {
                             const isOpen = showAnswer === faq.id
 

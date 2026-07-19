@@ -17,7 +17,7 @@ const InfoSection = () => {
         <section className="py-10 lg:py-16">
             <MaxContainer>
                 <PaddingContainer>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="w-full max-w-sm mx-auto lg:mx-0 rounded-t-full rounded-b-3xl bg-foreground text-background px-8 pt-14 pb-8 shadow-xl">
                             <p className="font-heading italic text-3xl text-center">business</p>
                             <h3 className="font-heading text-4xl lg:text-5xl uppercase text-center mb-6">Hours</h3>

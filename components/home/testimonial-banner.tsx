@@ -58,7 +58,7 @@ const TestimonialBanner = () => {
                                 <div className="bg-white rounded-xl p-7 flex flex-col max-lg:gap-8 justify-between h-full">
                                     <div className="space-y-2">
                                         <Rating ratings={testimonial.rating} />
-                                        <p className="max-md:text-sm font-medium">{testimonial.review}</p>
+                                        <p className="max-md:text-sm text-lg font-medium">{testimonial.review}</p>
                                     </div>
                                     <div className="flex items-center max-md:gap-2 gap-4">
                                         <Image src={testimonial.image} alt={`${testimonial.name}'s profile picture`} width={50} height={50} className="rounded-full max-md:size-10" />

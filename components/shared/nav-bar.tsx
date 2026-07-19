@@ -34,7 +34,7 @@ const NavBar = () => {
                         </ol>
                     </nav>
 
-                    <Button>Book Consultation</Button>
+                    <Button>Book Appointment</Button>
                 </div>
 
                 {/* Mobile Trigger */}
