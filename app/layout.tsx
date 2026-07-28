@@ -6,6 +6,7 @@ import BackToTop from "@/components/shared/back-to-top";
 import ScrollToTop from "@/components/shared/scroll-to-top";
 import Footer from "@/components/shared/footer";
 import NavBar from "@/components/shared/nav-bar";
+import { Providers } from "@/providers";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -106,11 +107,13 @@ export default function RootLayout({
       className={`${fraunces.variable} ${satoshi.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative">
-        <NavBar />
-        <ScrollToTop />
-        {children}
-        <BackToTop />
-        <Footer />
+        <Providers>
+          <NavBar />
+          <ScrollToTop />
+          {children}
+          <BackToTop />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

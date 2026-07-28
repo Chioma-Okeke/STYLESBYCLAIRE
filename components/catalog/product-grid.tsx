@@ -1,9 +1,11 @@
-import { services } from "@/lib/data"
+import { getCatalog } from "@/lib/services"
 import ProductCard from "./product-card"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 
-const ProductGrid = () => {
+const ProductGrid = async () => {
+    const { services, addons } = await getCatalog();
+
     return (
         <section className="py-10 lg:py-16">
             <MaxContainer>
@@ -16,7 +18,7 @@ const ProductGrid = () => {
                         {
                             services.map((service) => {
                                 return (
-                                    <ProductCard key={service.id} service={service} />
+                                    <ProductCard key={service.id} service={service} addons={addons} />
                                 )
                             })
                         }

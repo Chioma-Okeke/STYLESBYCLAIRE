@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import MaxContainer from "../shared/max-container";
 import PaddingContainer from "../shared/padding-container";
+import Link from "next/link";
 
 const heroImages = [
     "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522757/IMG_2214_t4kmzu.heic",
@@ -64,7 +65,7 @@ const HeroSection = () => {
                         <p className="text-white font-medium text-lg max-w-md">
                             Where every style tells a story braids &amp; twists, crafted just for you.
                         </p>
-                        <Button size="lg" className="h-auto px-6 py-3">Book Now</Button>
+                        <Link href='/catalog' className="bg-primary w-fit text-white shadow-sm px-5 py-3 rounded-sm hover:bg-primary-dark hover:shadow-lg transition-colors duration-300 ease-in-out">Book Now</Link>
                         <div className="flex items-center gap-2 text-white pt-2">
                             <div className="flex items-center">
                                 {[1, 2, 3, 4, 5].map((_, index) => (

@@ -1,89 +1,42 @@
-export interface Service {
-  id: number;
-  name: string;
-  category: ServiceCategory;
-  description: string;
-  price?: number;
-  pricing?: ServicePricing;
-  pricingType?: PricingType;
-  addOns?: AddOn[];
-  hairIncluded?: boolean;
-  depositRequired?: number;
-  image: string;
-  images: string[];
-  featured?: boolean;
-}
+export type ServiceKind = "service" | "addon";
 
-export type ServiceCategory =
-  | "Braids"
-  | "Twists"
-  | "Locs"
-  | "Cornrows"
-  | "Add-On";
+export type ServicePresentation = {
+    kind: ServiceKind;
+    image?: string;
+    images?: string[];
+    featured?: boolean;
+    deposit?: number;
+};
 
-export type PricingType =
-  | "fixed"
-  | "starting-at"
-  | "per-color";
+export type ServiceVariation = {
+    id: string; // service_variation_id — for availability + booking
+    version: number; // service_variation_version — for CreateBooking
+    name: string; // "Smedium - Midback"
+    price: number; // dollars
+    durationMinutes: number;
+    teamMemberIds: string[];
+};
 
-export type ServicePricing =
-  | KnotlessPricing
-  | MiniTwistPricing
-  | PrePartPricing[]
-  | LengthPricing;
+export type Service = {
+    id: string;
+    name: string;
+    description: string | null;
+    kind?: ServiceKind;
+    category: string | null;
+    priceFrom: number;
+    variations: ServiceVariation[];
+    image: string;
+    images: string[];
+    featured?: boolean;
+    deposit?: number | null;
+};
 
-export interface KnotlessPricing {
-  small?: LengthPrice;
-  smedium?: LengthPrice;
-  medium?: LengthPrice;
-  large?: LengthPrice;
-}
-
-export interface LengthPrice {
-  shoulder?: number;
-  bob?: number;
-  midback?: number;
-  waist?: number;
-}
-
-export interface MiniTwistPricing {
-  small?: number;
-  smedium?: number;
-  medium?: number;
-}
-
-export interface PrePartPricing {
-  size: string;
-  rows: string;
-  price: number;
-}
-
-export interface LengthPricing {
-  smedium?: LengthPrice;
-  medium?: LengthPrice;
-}
-
-export interface AddOn {
-  name: string;
-  price: number;
-  description?: string;
-  pricingType?: PricingType;
-}
-
-export interface BusinessRules {
-  deposit: DepositPolicy;
-  appointmentFees: AppointmentFees;
-  policies: string[];
-}
-
-export interface DepositPolicy {
-  required: boolean;
-  amount: number;
-  refundable: boolean;
-  note: string;
-}
-
-export interface AppointmentFees {
-  squeezeInAppointment: number;
-  weekendStudioAppointment: number;
-}
+export type Serialized<T> = T extends bigint
+    ? string
+    : T extends Date
+      ? string // JSON also stringifies Dates
+      : T extends Array<infer U>
+        ? Serialized<U>[]
+        : T extends object
+          ? { [K in keyof T]: Serialized<T[K]> }
+          : T;

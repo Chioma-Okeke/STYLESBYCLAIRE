@@ -33,7 +33,7 @@ const InfoSection = () => {
 
                         <div className="space-y-8 lg:text-lg font-medium">
                             <div>
-                                <p className="font-heading italic text-3xl text-primary">contact</p>
+                                <p className="font-heading text-3xl text-primary">Contact</p>
                                 <hr className="border-dotted border-t-2 border-primary/40 my-2" />
                                 <a href="mailto:maryclaireokoro@gmail.com">maryclaireokoro@gmail.com</a>
                                 <div>
@@ -43,14 +43,14 @@ const InfoSection = () => {
                             </div>
 
                             <div>
-                                <p className="font-heading italic text-3xl text-primary">location</p>
+                                <p className="font-heading text-3xl text-primary">Location</p>
                                 <hr className="border-dotted border-t-2 border-primary/40 my-2" />
                                 <p>Tempe, Arizona</p>
                                 <p>United States</p>
                             </div>
 
                             <div>
-                                <p className="font-heading italic text-3xl text-primary">social media</p>
+                                <p className="font-heading text-3xl text-primary">Social media</p>
                                 <hr className="border-dotted border-t-2 border-primary/40 my-2" />
                                 <div className="flex items-center gap-3">
                                     <InstagramIcon className="size-4" />
