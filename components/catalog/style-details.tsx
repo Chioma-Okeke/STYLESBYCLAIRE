@@ -180,7 +180,18 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
     return (
         <Sheet open={isOpen} onOpenChange={(open) => { setIsOpen(open); if (!open) resetFlow(); }}>
             <SheetTrigger asChild>
-                <Button className="h-auto py-3 border-primary/60" variant="outline">View Details</Button>
+                <div className="flex flex-col gap-4 cursor-pointer justify-between h-full">
+                    <div className="relative aspect-4/5 overflow-hidden rounded-2xl bg-muted">
+                        <Image priority src={service.images?.[0] || service.image} alt="product image" fill className="object-cover" />
+                    </div>
+                    <div className="text-center">
+                        <h3 className="font-semibold">{service?.name}</h3>
+                        {!!service.priceFrom && (
+                            <p className="text-sm text-muted-foreground">From ${service.priceFrom}</p>
+                        )}
+                    </div>
+                    <Button className="h-auto py-3 border-primary/60" variant="outline">View Details</Button>
+                </div>
             </SheetTrigger>
             <SheetContent className="overflow-y-auto pb-5">
                 <SheetHeader className="flex flex-col gap-3">
@@ -249,7 +260,7 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
                                         </motion.div>
                                     </AnimatePresence>
                                 </div>
-                                <div className={cn("grid grid-cols-3 gap-2 lg:gap-4 items-center", !service?.images && "hidden")}>
+                                <div className={cn("flex relative overflow-x-auto scrollbar-thin gap-2 lg:gap-4 items-center pb-2", (!service?.images || service?.images.length <= 1) && "hidden")}>
                                     {Array.isArray(service?.images) && service?.images.map((image, index) => {
                                         return (
                                             <div
@@ -257,7 +268,7 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
                                                     setActiveImage(image)
                                                 }}
                                                 key={index}
-                                                className="relative overflow-hidden aspect-4/5 rounded-xl bg-muted cursor-pointer border-2 border-transparent hover:border-primary/50 transition-all duration-300 ease-in-out"
+                                                className="relative size-24 shrink-0 overflow-hidden aspect-4/5 rounded-xl bg-muted cursor-pointer border-2 border-transparent hover:border-primary/50 transition-all duration-300 ease-in-out"
                                             >
                                                 <Image
                                                     src={image}
