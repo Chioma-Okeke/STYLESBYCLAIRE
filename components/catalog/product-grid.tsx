@@ -5,6 +5,8 @@ import PaddingContainer from "../shared/padding-container"
 
 const ProductGrid = async () => {
     const { services, addons } = await getCatalog();
+    console.log(services, "services on client")
+    console.log(addons, "addons on client")
 
     return (
         <section className="py-10 lg:py-16">

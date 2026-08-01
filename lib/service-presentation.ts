@@ -8,12 +8,10 @@ export const servicePresentation: Record<string, ServicePresentation> = {
     }, // Two Strand Twists
     NIBWT2KRPAOFI56MQVGAVV7O: {
         kind: "service",
-        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1784155210/Logo_j1hiri.png",
         deposit: 25,
     }, //braids (Natural)
     "6LR5V4COFJXSFI3H7UEKHMHV": {
         kind: "service",
-        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1784155210/Logo_j1hiri.png", // TODO: real photo
         deposit: 25,
     }, //Regular Cornrows
     "4BUORYE4PUWO2X4ZZ7SC5VEE": {
@@ -22,12 +20,11 @@ export const servicePresentation: Record<string, ServicePresentation> = {
             "https://res.cloudinary.com/djrp3aaq9/image/upload/v1785349406/fulani_1_frmkxy.jpg",
             "https://res.cloudinary.com/djrp3aaq9/image/upload/v1785349406/fulani_3_okzwmq.jpg",
             "https://res.cloudinary.com/djrp3aaq9/image/upload/v1785349406/fulani_4_qj2mhj.jpg",
-        ], // TODO: real photo
+        ],
         deposit: 25,
     }, // Fulani quick weave
     FRTO73NVENWG6EBZVE3BSOK2: {
         kind: "service",
-        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5122_jdpfg2.heic",
         featured: true,
         deposit: 25,
     }, //Knotless braids
@@ -74,6 +71,14 @@ export const servicePresentation: Record<string, ServicePresentation> = {
         kind: "service",
         deposit: 25,
     }, // Miracle Knots
+    "7VVFECLMMQUEMTG5THQY5QQX": {
+        kind: "service",
+        deposit: 25,
+    }, // Island Twists
+    E7JKR7NGMPXG2Z2XP44XGGTZ: {
+        kind: "service",
+        deposit: 25,
+    }, // Fulani French Curls
     T7OR3J7SEPSUDCD2XTSQYGO5: { kind: "addon" }, // Hair Add-Ons (boho upgrades)
     "3PBWBZDIV6FQSPCP2JB6EKJG": { kind: "addon" }, // Pop of Color
     YVG52EB2HLVML35ESCJRPJVN: { kind: "addon" }, // Curly Ends
@@ -81,4 +86,4 @@ export const servicePresentation: Record<string, ServicePresentation> = {
 };
 
 export const FALLBACK_IMAGE =
-    "https://res.cloudinary.com/djrp3aaq9/image/upload/f_auto,q_auto/v1780522755/IMG_5135_udbzv3.heic";
+    "https://res.cloudinary.com/djrp3aaq9/image/upload/v1784155210/Logo_j1hiri.png";

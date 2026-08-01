@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { searchAvailability, createBooking, type TimeSlot } from "@/lib/actions/booking";
 import { PaymentForm, CreditCard } from "react-square-web-payments-sdk";
 import type { TokenResult } from "@square/web-sdk";
+import { VariationOptions } from "./variation-options";
 
 type Step = "details" | "addons" | "review" | "payment" | "confirmation";
 const STEPS: { key: Step; label: string }[] = [
@@ -57,8 +58,12 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
     const [bookingId, setBookingId] = useState<string | null>(null);
 
     const selectedVariation = service.variations.find((v) => v.id === selectedVariationId);
-    const selectedAddons = addons.filter((a) => selectedAddonIds.has(a.id));
-    const addonsTotal = selectedAddons.reduce((sum, a) => sum + a.priceFrom, 0);
+    const selectedAddonSelections = addons.flatMap((addon) =>
+        addon.variations
+            .filter((variation) => selectedAddonIds.has(variation.id))
+            .map((variation) => ({ addon, variation }))
+    );
+    const addonsTotal = selectedAddonSelections.reduce((sum, { variation }) => sum + variation.price, 0);
     const total = (selectedVariation?.price ?? 0) + addonsTotal;
 
     const stepIndex = STEPS.findIndex((s) => s.key === step);
@@ -148,17 +153,11 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
             variationVersion: selectedVariation.version,
             teamMemberId: selectedVariation.teamMemberIds[0],
             startAt: selectedSlot.startAt,
-            addons: selectedAddons
-                .map((addon) => {
-                    const variation = addon.variations[0];
-                    if (!variation) return null;
-                    return {
-                        id: variation.id,
-                        version: variation.version,
-                        teamMemberId: variation.teamMemberIds[0] ?? selectedVariation.teamMemberIds[0],
-                    };
-                })
-                .filter((a): a is NonNullable<typeof a> => !!a),
+            addons: selectedAddonSelections.map(({ variation }) => ({
+                id: variation.id,
+                version: variation.version,
+                teamMemberId: variation.teamMemberIds[0] ?? selectedVariation.teamMemberIds[0],
+            })),
             customer: contact,
             sourceId: token.token,
             depositAmount: DEPOSIT,
@@ -391,28 +390,34 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
                             </div>
                             <div className="flex flex-col gap-2">
                                 {addons.map((addon) => {
-                                    const isChecked = selectedAddonIds.has(addon.id);
+                                    const hasMoreVariations = addon.variations.length > 1;
+                                    const soloVariationId = addon.variations[0]?.id;
+                                    const isChecked = !!soloVariationId && selectedAddonIds.has(soloVariationId);
                                     return (
-                                        <button
-                                            key={addon.id}
-                                            type="button"
-                                            onClick={() => toggleAddon(addon.id)}
-                                            className={cn(
-                                                "flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition-colors duration-200 cursor-pointer",
-                                                isChecked ? "border-primary bg-primary/5" : "border-border hover:border-primary/40"
-                                            )}
-                                        >
-                                            <div className="flex items-center gap-3">
-                                                <span className={cn(
-                                                    "flex size-4 shrink-0 items-center justify-center rounded border",
-                                                    isChecked ? "bg-primary border-primary" : "border-border"
-                                                )}>
-                                                    {isChecked && <Check className="size-3 text-white" />}
-                                                </span>
-                                                <p>{addon.name}</p>
-                                            </div>
-                                            <p className="tabular-nums shrink-0">+${addon.priceFrom}</p>
-                                        </button>
+                                        hasMoreVariations ? (
+                                            <VariationOptions key={addon.id} addon={addon} selectedAddonIds={selectedAddonIds} toggleAddon={toggleAddon} />
+                                        ) : (
+                                            <button
+                                                key={addon.id}
+                                                type="button"
+                                                onClick={() => soloVariationId && toggleAddon(soloVariationId)}
+                                                className={cn(
+                                                    "flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition-colors duration-200 cursor-pointer",
+                                                    isChecked ? "border-primary bg-primary/5" : "border-border hover:border-primary/40"
+                                                )}
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <span className={cn(
+                                                        "flex size-4 shrink-0 items-center justify-center rounded border",
+                                                        isChecked ? "bg-primary border-primary" : "border-border"
+                                                    )}>
+                                                        {isChecked && <Check className="size-3 text-white" />}
+                                                    </span>
+                                                    <p>{addon.name}</p>
+                                                </div>
+                                                <p className="tabular-nums shrink-0">+${addon.priceFrom}</p>
+                                            </button>
+                                        )
                                     )
                                 })}
                             </div>
@@ -436,7 +441,7 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
                                     <span>{selectedVariation?.name}</span>
                                 </div>
                                 <div className="flex items-center justify-between text-sm text-muted-foreground font-normal">
-                                    <span>{selectedAddons.length ? selectedAddons.map((a) => a.name).join(", ") : "No add-ons"}</span>
+                                    <span>{selectedAddonSelections.length ? selectedAddonSelections.map(({ addon, variation }) => addon.variations.length > 1 ? `${addon.name} (${variation.name})` : addon.name).join(", ") : "No add-ons"}</span>
                                     {addons.length > 0 && (
                                         <button type="button" className="text-primary underline text-xs" onClick={() => setStep("addons")}>Edit</button>
                                     )}
@@ -590,10 +595,10 @@ const StyleDetails = ({ service, addons }: { service: Service; addons: Service[]
                                     <span>{service.name} — {selectedVariation?.name}</span>
                                     <span className="tabular-nums">${selectedVariation?.price}</span>
                                 </div>
-                                {selectedAddons.map((a) => (
-                                    <div key={a.id} className="flex items-center justify-between">
-                                        <span>{a.name}</span>
-                                        <span className="tabular-nums">${a.priceFrom}</span>
+                                {selectedAddonSelections.map(({ addon, variation }) => (
+                                    <div key={variation.id} className="flex items-center justify-between">
+                                        <span>{addon.variations.length > 1 ? `${addon.name} (${variation.name})` : addon.name}</span>
+                                        <span className="tabular-nums">${variation.price}</span>
                                     </div>
                                 ))}
                                 <hr className="border-border" />
